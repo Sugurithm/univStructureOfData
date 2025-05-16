@@ -11,17 +11,15 @@ typedef struct {
 
 Node tree[MAX];
 
-// 深さを設定する．再帰関数で実現
 void setDepth(int u, int d) {
     tree[u].depth = d;
     if (tree[u].left != -1) setDepth(tree[u].left, d + 1); // 最も左の子は深さ+1
     if (tree[u].right != -1) setDepth(tree[u].right, d);   // 右兄弟は同じ深さ
 }
 
-// 子のリストを表示
 void printChildren(int u) {
     printf("[");
-    int first = 1;
+    int first = 1; // 最初か否かのフラグ
     for (int child = tree[u].left; child != -1; child = tree[child].right) {
         if (!first) printf(", ");
         printf("%d", child);
@@ -60,7 +58,7 @@ int main() {
         }
     }
 
-    // 根を探す（親が -1 のノード）
+    // 根を探す
     int root = -1;
     for (int i = 0; i < n; i++) {
         if (tree[i].parent == -1) {
@@ -69,7 +67,6 @@ int main() {
         }
     }
 
-    // 深さを設定
     setDepth(root, 0);
 
     // 出力 node, parent, depth, type, children
