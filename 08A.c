@@ -55,11 +55,11 @@ void inorder(int root) {
     }
 }
 
-void preoder(int root) {
+void preorder(int root) {
     if (root != -1) {
         printf(" %d", tree[root].value);
-        preoder(tree[root].left);
-        preoder(tree[root].right);
+        preorder(tree[root].left);
+        preorder(tree[root].right);
     }
 }
 
@@ -90,7 +90,7 @@ int main() {
         } else if (strcmp(str, "print") == 0) {
             inorder(root);
             printf("\n");
-            preoder(root);
+            preorder(root);
             printf("\n");
         }
     }
@@ -98,5 +98,6 @@ int main() {
     // メモリ解放
     free(tree);
     tree = NULL;
+    
     return 0;
 }
