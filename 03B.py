@@ -1,6 +1,6 @@
 n , q = map(int, input().split())
 
-buffer_size = n
+buffer_size = n + 1 # head = tail　の時必ず空である保証
 queue = [None] * buffer_size
 head = 0
 tail = 0
@@ -29,4 +29,3 @@ while head != tail: # head = tail の時，キューは空
 # 出力
 for name, time in ans:
     print(name, time)
-
