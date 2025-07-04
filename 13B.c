@@ -65,7 +65,7 @@ unsigned int getHash(int board[N][N]) {
     unsigned int hash = 0;
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            hash = hash * 31 + board[i][j]; // より良いハッシュ関数
+            hash = hash * 31 + board[i][j];
         }
     }
     return hash % HASH_SIZE;
