@@ -83,6 +83,7 @@ Node *treeSuccessor(Node *x) {
     /*
     今回のアルゴリズムでは x->right == NULL になることはないが，
     他の場合で使われることがあるので，汎用性を考慮して実装する．
+    （二分木のアルゴリズムなので，子が二つのノードを削除する場合に焦点を当てている）
     */
     Node *y = x->parent;
     while (y != NULL && x == y->right) {
