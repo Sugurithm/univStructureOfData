@@ -29,7 +29,7 @@ int main () {
         for (int j = 0; j < k; j++) {
             int adj;
             scanf("%d", &adj);
-            A[i][adj - 1] = 1; // indexに注意
+            A[i][adj - 1] = 1;
         }
     }
 

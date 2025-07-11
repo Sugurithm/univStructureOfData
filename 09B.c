@@ -32,8 +32,7 @@ void maxHeapify(int A[], int n, int i) {
     if (largestNumIndex != i) {
         swap(&A[i], &A[largestNumIndex]);
         maxHeapify(A, n, largestNumIndex);
-
-}
+    }
 }
 
 int main() {
